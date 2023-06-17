@@ -1,0 +1,62 @@
+
+.top {      
+    display: flex;
+    width: 100%;
+    height: 50pt;
+    background: rgb(197, 197, 197);
+}
+
+.top .tit {     
+    height: 50pt;
+    width: 65%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.top .tit a {
+    margin: 0;
+    position: absolute;
+    top: 9pt;
+    font-family: 'Javanese Text';
+    font-size: xx-large;
+    text-decoration: none;
+    color: #000;
+}
+#topm {
+    margin: 10pt;
+    text-align: center;
+    display: flex;
+    width: 953pt;
+    height: 50pt;
+    background-color: aqua;
+}
+#topm a{
+    display: block;
+    width: 50pt;
+    height: 40pt;
+    text-align: center;
+    margin: 5pt;
+    background-color: rgb(0, 255, 170);
+    color: #000;
+    text-decoration: none;
+}
+.contents {
+    display: flex;
+}
+#lmenu{
+    height: 300pt;
+    width: 100pt;
+    background-color: aqua;
+}
+#lmenu a{
+    margin: 5pt;
+    display: block;
+    width: 90pt;
+    height: 20pt;
+    background-color: rgb(0, 255, 170);
+    color: #000;
+    text-decoration: none;
+}
+#main{
+    margin: 10pt;
+}

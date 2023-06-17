@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>404_NOT_FOUND</title>
+</head>
+<body>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+        }
+        .top {
+            font-size: 2cm;
+            height: 30pt;
+            text-align: center;
+            font-family: 'Javanese Text';
+        }
+        .fade-in {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .fade-in p {
+            font-size: 5cm;
+            text-align: center;
+            font-family: 'Javanese Text';
+            margin: auto;
+        }
+        .fade-in.show {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var div = document.querySelector('.fade-in');
+            div.classList.add('show');
+        };
+    </script>
+    <div>
+        <p class="top">404 NOT FOUND</p>
+    </div>
+    <div class="fade-in">
+        <p>A</p>
+        <p>W</p>
+        <p>A</p>
+        <p>K</p>
+        <p>E</p>
+    </div>
+</body>
