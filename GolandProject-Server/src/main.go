@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GolandProject/src/modules/ConfigHelper"
-	"GolandProject/src/modules/Log"
+	"GolandProject-Server/src/modules/ConfigHelper"
+	"GolandProject-Server/src/modules/Log"
 	"fmt"
 	"net/http"
 )
@@ -47,14 +47,6 @@ func main() {
 	fmt.Println("Served")
 	err := http.ListenAndServe(":2047", nil)
 	chk(err)
-}
-func GetItem(path string) string {
-	switch path {
-	case "index":
-		return "项A 项B 项C 项D"
-	default:
-		return "Unknown request"
-	}
 }
 
 func chk(err error) {
