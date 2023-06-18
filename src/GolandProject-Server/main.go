@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GolandProject-Server/AccountSystem"
 	"GolandProject-Server/modules/ConfigHelper"
 	"GolandProject-Server/modules/Log"
 	"fmt"
@@ -54,6 +55,8 @@ func Items(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/items", Items)
+	http.HandleFunc("/signin", AccountSystem.SignIn)
+	http.HandleFunc("/signup", AccountSystem.SignUp)
 	fmt.Println("Server-Served")
 	err := http.ListenAndServe(":2047", nil)
 	chk(err)

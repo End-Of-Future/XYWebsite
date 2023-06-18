@@ -1,7 +1,7 @@
 package ConfigHelper
 
 import (
-	"GolandProject-Server/src/modules/Log"
+	"GolandProject-Server/modules/Log"
 	"os"
 	"path/filepath"
 	"strings"
