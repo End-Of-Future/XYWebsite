@@ -1,7 +1,7 @@
 package ConfigHelper
 
 import (
-	"GolandProject/src/modules/Log"
+	"GolandProject-Server/src/modules/Log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -28,6 +28,12 @@ func (c Conf) FindQuery(rname string) string {
 		}
 	}
 	return ""
+}
+
+func (c Conf) GetFile(path string) string {
+	f, err := os.ReadFile(path + ".txt")
+	chk(err)
+	return string(f)
 }
 
 func chk(err error) {

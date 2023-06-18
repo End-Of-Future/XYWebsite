@@ -5,6 +5,7 @@ import (
 	"GolandProject-Server/src/modules/Log"
 	"fmt"
 	"net/http"
+	"path/filepath"
 )
 
 func Items(w http.ResponseWriter, r *http.Request) {
@@ -36,6 +37,15 @@ func Items(w http.ResponseWriter, r *http.Request) {
 		}
 		_, err := fmt.Fprintf(w, c.FindQuery("l-"+r.FormValue("path"))) //左目录
 		chk(err)
+	case "c":
+		fmt.Println("Parameters following:")
+		for k, v := range r.Form {
+			fmt.Println("KEY:", k, " VALUE:", v)
+		}
+		p, err := filepath.Abs("")
+		chk(err)
+		_, err = fmt.Fprintf(w, c.GetFile(p+"\\src\\Contents\\"+r.FormValue("path"))) //左目录
+		chk(err)
 	default:
 		_, err := fmt.Fprintf(w, "Unknown")
 		chk(err)
@@ -44,7 +54,7 @@ func Items(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/items", Items)
-	fmt.Println("Served")
+	fmt.Println("Server-Served")
 	err := http.ListenAndServe(":2047", nil)
 	chk(err)
 }
