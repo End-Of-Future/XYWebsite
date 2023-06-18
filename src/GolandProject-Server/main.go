@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GolandProject-Server/src/modules/ConfigHelper"
-	"GolandProject-Server/src/modules/Log"
+	"GolandProject-Server/modules/ConfigHelper"
+	"GolandProject-Server/modules/Log"
 	"fmt"
 	"net/http"
 	"path/filepath"
