@@ -28,3 +28,10 @@ function GetLeftItems(path){
         tmenu.innerHTML+='<a>'+itArr[it]+'</a>';
     }
 }
+function GetContent(path){
+    var req=new XMLHttpRequest();
+    req.open("POST",url,false);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    req.send("mode=c&path=" + path + "&code="+Math.random());
+    document.getElementById("main").innerText=req.responseText;
+}
