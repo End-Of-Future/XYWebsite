@@ -53,13 +53,22 @@ func Items(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
+func Init() {
 	http.HandleFunc("/items", Items)
 	http.HandleFunc("/signin", AccountSystem.SignIn)
 	http.HandleFunc("/signup", AccountSystem.SignUp)
 	fmt.Println("Server-Served")
 	err := http.ListenAndServe(":2047", nil)
 	chk(err)
+}
+
+func Test() {
+	AccountSystem.Test(1)
+}
+
+func main() {
+	//Init()
+	Test()
 }
 
 func chk(err error) {
