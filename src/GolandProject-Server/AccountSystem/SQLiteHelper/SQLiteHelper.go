@@ -76,6 +76,19 @@ func Select(query string, args ...any) (int, int, string, error) {
 	return id, lv, name, err
 }
 
+func Slice_Select(elements []any, query string, args ...any) error {
+	var temp []any
+	for i, _ := range elements {
+		temp = append(temp, &elements[i])
+	}
+
+	rows, err := db.Query(query, args...)
+	chk(err)
+	rows.Next()
+	err = rows.Scan(temp...)
+	return err
+}
+
 func Insert() {
 	Log.Send("INSERT")
 }

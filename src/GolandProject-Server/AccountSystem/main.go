@@ -20,9 +20,10 @@ func Test(mode int) {
 	SQLiteHelper.Init()
 	switch mode {
 	case OPERATE_SELECT:
-		id, lv, name, err := SQLiteHelper.Select("SELECT * FROM users WHERE id=1;")
+		s := []any{"", 0, ""}
+		err := SQLiteHelper.Slice_Select(s, "SELECT * FROM test;")
 		chk(err)
-		Log.Send("ID: ", id, " LV: ", lv, " NAME: ", name)
+		Log.Send("s[0]: ", s[0], "s[1]: ", s[1], "s[2]: ", s[2])
 	case OPERATE_INSERT:
 		SQLiteHelper.Insert()
 	case OPERATE_UPDATE:
