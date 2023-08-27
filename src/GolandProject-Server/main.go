@@ -14,7 +14,7 @@ func Items(w http.ResponseWriter, r *http.Request) {
 	chk(err)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	Log.Success("CONNECTED")
-	c := ConfigHelper.NewConf("./src/dbs/strings.config")
+	c := ConfigHelper.NewConf("./src/GolandProject-Server/dbs/strings.config")
 	s := r.FormValue("mode")
 	switch s {
 	case "title":
@@ -45,7 +45,7 @@ func Items(w http.ResponseWriter, r *http.Request) {
 		}
 		p, err := filepath.Abs("")
 		chk(err)
-		_, err = fmt.Fprintf(w, c.GetFile(p+"\\src\\Contents\\"+r.FormValue("path"))) //左目录
+		_, err = fmt.Fprintf(w, c.GetFile(p+"\\src\\GolandProject-Client\\Contents\\"+r.FormValue("path"))) //左目录
 		chk(err)
 	default:
 		_, err := fmt.Fprintf(w, "Unknown")
@@ -67,8 +67,8 @@ func Test() {
 }
 
 func main() {
-	//Init()
-	Test()
+	Init()
+	//Test()
 }
 
 func chk(err error) {

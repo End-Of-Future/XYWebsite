@@ -76,7 +76,7 @@ func Select(query string, args ...any) (int, int, string, error) {
 	return id, lv, name, err
 }
 
-func Slice_Select(elements []any, query string, args ...any) error {
+func SliceSelect(elements []any, query string, args ...any) error {
 	var temp []any
 	for i, _ := range elements {
 		temp = append(temp, &elements[i])

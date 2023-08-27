@@ -21,7 +21,7 @@ func Test(mode int) {
 	switch mode {
 	case OPERATE_SELECT:
 		s := []any{"", 0, ""}
-		err := SQLiteHelper.Slice_Select(s, "SELECT * FROM test;")
+		err := SQLiteHelper.SliceSelect(s, "SELECT * FROM users;")
 		chk(err)
 		Log.Send("s[0]: ", s[0], "s[1]: ", s[1], "s[2]: ", s[2])
 	case OPERATE_INSERT:

@@ -13,7 +13,8 @@ function GetTopItems(){
     req.send("mode=t&code="+Math.random());
     const itArr = req.responseText.split(" ");
     let tmenu = document.getElementById("topm");
-    for(let it in itArr){
+    for(let i=0;i<itArr.length;++i){
+        let it=itArr[i]
         const ik = it.split("=");
         tmenu.innerHTML+='<a href=\"'+ik[1]+ '\">'+ik[0]+'</a>';
     }
@@ -25,7 +26,8 @@ function GetLeftItems(path){
     req.send("mode=l&path=" + path + "&code="+Math.random());
     const itArr = req.responseText.split(" ");
     let tmenu = document.getElementById("lmenu");
-    for(let it in itArr){
+    for(let i=0;i<itArr.length;++i){
+        let it=itArr[i]
         const ik = it.split("=");
         tmenu.innerHTML+='<a href=\"'+ik[1]+ '\">'+ik[0]+'</a>';
     }
